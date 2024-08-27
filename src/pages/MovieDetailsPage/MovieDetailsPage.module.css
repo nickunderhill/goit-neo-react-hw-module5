@@ -1,0 +1,94 @@
+.details {
+    padding: 20px 30px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.backBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 30px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(245, 197, 24);
+    border: 1px solid rgb(245, 197, 24);
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    max-width: 120px;
+}
+
+.backBtn:hover {
+    border: 1px solid black;
+}
+
+.movieCard {
+    display: flex;
+    gap: 20px
+}
+
+.infoSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.infoTitle {
+    font-weight: 600;
+}
+
+.infoDescription {
+    text-align: left;
+}
+
+.movieCardPoster {
+    max-width: 350px;
+}
+
+.movieCardTextInfo {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.detailsLinks {
+    background-color: rgb(18, 18, 18);
+    color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+}
+
+.detailsLinkItem {
+    font-size: 16px;
+    font-weight: 600;
+    color: inherit;
+    padding: 0px;
+
+    &:global.active {
+        color: rgb(245, 197, 24);
+        text-decoration: underline;
+    }
+}
+
+.detailsLinkItemLink {
+    display: block;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: inherit;
+    padding: 8px 16px;
+
+    &:global.active {
+        color: rgb(245, 197, 24);
+        text-decoration: underline;
+    }
+}
+

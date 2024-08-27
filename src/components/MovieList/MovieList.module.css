@@ -1,0 +1,19 @@
+.moviesList {
+    text-align: left;
+    padding: 30px;
+}
+
+.movieLink {
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+}
+
+.movieLink:hover {
+    text-decoration: underline;
+}
+
+.notFoundPlaceholder {
+    padding: 30px;
+    text-align: left;
+}

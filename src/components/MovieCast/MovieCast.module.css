@@ -1,0 +1,29 @@
+.cast {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.imageCardImg {
+    display: flex;
+    flex-direction: column;
+}
+
+.imageCard {
+    width: 100px;
+}
+
+.actorName {
+    font-weight: 700;
+}
+
+.characterName {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.imageCardImg {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}

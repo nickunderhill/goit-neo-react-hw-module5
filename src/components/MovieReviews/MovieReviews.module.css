@@ -1,0 +1,25 @@
+.reviews {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.review {
+    padding: 10px;
+    display: flex;
+    background: #f6f6f5;
+    gap: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.reviewDate {
+    color: rgb(88, 88, 88);
+    font-size: 14px;
+}
+
+.comment {
+    font-size: 14px;
+    text-align: left;
+}
