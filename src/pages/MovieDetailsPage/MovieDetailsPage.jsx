@@ -1,5 +1,5 @@
 import css from './MovieDetailsPage.module.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import {
   NavLink,
   Outlet,
@@ -16,6 +16,7 @@ const MovieDetailsPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [movie, setMovie] = useState(null);
+  const locationState = useRef(location.state);
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -37,9 +38,7 @@ const MovieDetailsPage = () => {
   }
 
   const handleGoBack = () => {
-    navigate(location.state?.from ?? '/', {
-      state: { searchQuery: location.state?.searchQuery },
-    });
+    navigate(locationState.current?.from ?? '/');
   };
 
   const placeholderImage = 'https://via.placeholder.com/500x750?text=No+Photo';
