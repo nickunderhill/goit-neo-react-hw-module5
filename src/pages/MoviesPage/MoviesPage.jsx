@@ -23,9 +23,7 @@ const MoviesPage = () => {
       }
     );
     const movies = response.data.results;
-    if (movies.length === 0) {
-      setEmptyResult(true);
-    }
+    movies.length === 0 ? setEmptyResult(true) : setEmptyResult(false);
     setMovies(movies);
   }, []);
 
