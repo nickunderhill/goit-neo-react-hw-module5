@@ -9,6 +9,7 @@ const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') || '';
+  const [inputValue, setInputValue] = useState(query);
   const [emptyResult, setEmptyResult] = useState(false);
 
   const searchMovies = async query => {
@@ -34,7 +35,11 @@ const MoviesPage = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setSearchParams({ query });
+    setSearchParams({ query: inputValue });
+  };
+
+  const handleInputChange = e => {
+    setInputValue(e.target.value);
   };
 
   return (
@@ -43,8 +48,8 @@ const MoviesPage = () => {
         <input
           className={css.searchInput}
           type="text"
-          value={query}
-          onChange={e => setSearchParams({ query: e.target.value })}
+          value={inputValue}
+          onChange={handleInputChange}
           placeholder="Search movie"
         />
         <button className={css.searchBtn} type="submit">
