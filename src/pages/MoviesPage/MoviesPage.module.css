@@ -38,3 +38,8 @@
 .searchBtn:hover {
     border: 1px solid black;
 }
+
+.emptyResult {
+    text-align: left;
+    padding: 30px;
+}

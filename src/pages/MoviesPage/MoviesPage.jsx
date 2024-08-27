@@ -10,6 +10,7 @@ const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
   const [query, setQuery] = useState(searchParams.get('query') || '');
+  const [emptyResult, setEmptyResult] = useState(false);
 
   const searchMovies = useCallback(async query => {
     const response = await axios.get(
@@ -21,7 +22,11 @@ const MoviesPage = () => {
         },
       }
     );
-    setMovies(response.data.results);
+    const movies = response.data.results;
+    if (movies.length === 0) {
+      setEmptyResult(true);
+    }
+    setMovies(movies);
   }, []);
 
   useEffect(() => {
@@ -53,7 +58,11 @@ const MoviesPage = () => {
           Search
         </button>
       </form>
-      <MovieList movies={movies} />
+      {emptyResult ? (
+        <div className={css.emptyResult}>Nothing found</div>
+      ) : (
+        <MovieList movies={movies} />
+      )}
     </div>
   );
 };
