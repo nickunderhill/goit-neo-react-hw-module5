@@ -7,8 +7,7 @@ import {
   useLocation,
   useNavigate,
 } from 'react-router-dom';
-import axios from 'axios';
-import { TMDB_API_KEY } from '/src/config.js';
+import { fetchDetails } from '../../api-tmdb.js';
 import { TiArrowBack } from 'react-icons/ti';
 
 const MovieDetailsPage = () => {
@@ -20,15 +19,8 @@ const MovieDetailsPage = () => {
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
-      const response = await axios.get(
-        `https://api.themoviedb.org/3/movie/${movieId}}`,
-        {
-          headers: {
-            Authorization: `Bearer ${TMDB_API_KEY}`,
-          },
-        }
-      );
-      setMovie(response.data);
+      const movieDetails = await fetchDetails(movieId);
+      setMovie(movieDetails);
     };
     fetchMovieDetails();
   }, [movieId]);
